@@ -38,7 +38,7 @@ server.setRequestHandler(ListToolsRequestSchema, () => ({
     name: 'image_generate',
     description: '使用ChatGPT 4o生成图片',
     inputSchema: obj2JsonSchema({
-      filesUrl: z.array(z.string().describe('用户上传的参考图片')).max(5).optional(),
+      filesUrl: z.array(z.string().describe('参考图片')).describe('参考图片列表').max(5).optional(),
       prompt: z.string().describe('图片生成提示词，用于描述你希望4o image生成的内容。filesUrl和prompt至少需要提供一个').optional(),
       size: z.string().describe('图片尺寸比例，可选值：1:1，3:2, 2:3').optional(),
     }),
