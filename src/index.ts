@@ -55,7 +55,7 @@ server.setRequestHandler(ListToolsRequestSchema, () => ({
   }],
 }));
 
-server.setRequestHandler(CallToolRequestSchema, async (req) => {
+server.setRequestHandler(CallToolRequestSchema, async req => {
   try {
     const apiKey = API_KEY || getAuthValue(req, 'API_KEY');
     const { name, arguments: args = {} } = req.params;
