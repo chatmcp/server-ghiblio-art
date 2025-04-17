@@ -144,7 +144,7 @@ async function runServer() {
 
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error('Ghiblio-art MCP Server running on stdio');
+  // console.info('Ghiblio-art MCP Server running on stdio');
 }
 
 runServer().catch((error) => {
