@@ -1,0 +1,55 @@
+params:
+  type: object
+  properties:
+    GHIBLIO_ART_API_KEY:
+      type: string
+      description: ghiblio art api key
+  required:
+    - GHIBLIO_ART_API_KEY
+
+rest:
+  name: ghiblio-art
+  port: 9593
+  endpoint: /rest
+
+npx:
+  command:
+    | GHIBLIO_ART_API_KEY={GHIBLIO_ART_API_KEY} npx -y server-ghiblio-art
+  config:
+    | {
+    "mcpServers": {
+      "ghiblio-art": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "server-ghiblio-art"
+        ],
+        "env": {
+          "GHIBLIO_ART_API_KEY": "YOUR_API_KEY_HERE"
+        }
+      }
+    }
+    }
+
+docker:
+  command:
+    | docker run -i --rm -e GHIBLIO_ART_API_KEY={GHIBLIO_ART_API_KEY} mcp/ghiblio-art
+  config:
+    | {
+    "mcpServers": {
+      "ghiblio-art": {
+        "command": "docker",
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "-e",
+          "GHIBLIO_ART_API_KEY",
+          "mcp/ghiblio-art"
+        ],
+        "env": {
+          "GHIBLIO_ART_API_KEY": "YOUR_API_KEY_HERE"
+        }
+      }
+    }
+    }

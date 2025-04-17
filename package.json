@@ -1,0 +1,29 @@
+{
+  "name": "server-ghiblio-art",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc && chmod 755 build/index.js",
+    "start": "node build/index.js"
+  },
+  "bin": {
+    "server-ghiblio-art": "./build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "dependencies": {
+    "@chatmcp/sdk": "^1.0.6",
+    "@modelcontextprotocol/sdk": "^1.9.0",
+    "axios": "^1.8.4",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "typescript": "^5.8.3"
+  },
+  "keywords": [],
+  "author": "wei.yan@lingzhao.net",
+  "license": "MIT",
+  "type": "module"
+}

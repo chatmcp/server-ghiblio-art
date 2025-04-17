@@ -1,0 +1,14 @@
+logs/
+build/
+node_modules/
+coverage/
+typings/
+.idea/
+run/
+.DS_Store
+*.swp
+*.log
+package-lock.json
+version
+.github
+.vscode
