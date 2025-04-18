@@ -1,33 +1,31 @@
 {
-  "name": "server-ghiblio-art",
-  "version": "1.0.0",
+  "name": "@chatmcp/mcp-server-ghiblio-art",
+  "version": "0.0.1",
   "description": "",
   "private": false,
-  "scripts": {
-    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
-    "prepare": "npm run build",
-    "watch": "tsc --watch",
-    "inspector": "npx @modelcontextprotocol/inspector node build/index.js",
-    "start": "node build/index.js"
-  },
+  "type": "module",
+  "homepage": "https://github.com/chatmcp/server-ghiblio-art",
   "bin": {
-    "server-ghiblio-art": "./build/index.js"
+    "mcp-server-ghiblio-art": "./build/index.js"
   },
   "files": [
     "build"
   ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js"
+  },
   "dependencies": {
-    "@chatmcp/sdk": "^1.0.6",
-    "@modelcontextprotocol/sdk": "^1.9.0",
+    "@chatmcp/sdk": "^1.0.5",
+    "@modelcontextprotocol/sdk": "0.6.0",
     "axios": "^1.8.4",
     "zod": "^3.24.3"
   },
   "devDependencies": {
-    "@types/node": "^22.14.1",
-    "typescript": "^5.8.3"
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
   },
-  "keywords": [],
-  "author": "wei.yan@lingzhao.net",
-  "license": "MIT",
-  "type": "module"
+  "author": "wei.yan@lingzhao.net"
 }
