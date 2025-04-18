@@ -2,8 +2,9 @@
   "name": "server-ghiblio-art",
   "version": "1.0.0",
   "description": "",
+  "private": false,
   "scripts": {
-    "build": "tsc && chmod 755 build/index.js",
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
     "prepare": "npm run build",
     "watch": "tsc --watch",
     "inspector": "npx @modelcontextprotocol/inspector node build/index.js",
